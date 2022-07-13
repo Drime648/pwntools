@@ -50,6 +50,7 @@ commands = {
 }
 
 def main():
+    print(121212122)
     if len(sys.argv) < 2:
         parser.print_usage()
         sys.exit()

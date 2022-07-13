@@ -22,6 +22,14 @@ if not binary:
 
 exe = os.path.basename(binary)
 
+if libc:
+    try:
+        libc_file = ELF(os.path.basename(libc))
+    except ELFError:
+        libc_file = ELF('./path_to_libc')
+
+
+
 ssh = user or password
 if ssh and not port:
     port = 22

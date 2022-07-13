@@ -21,6 +21,7 @@ parser.add_argument('--pass', '--password', help='SSH Password', dest='password'
 parser.add_argument('--path', help='Remote path of file on SSH server')
 parser.add_argument('--quiet', help='Less verbose template comments', action='store_true')
 parser.add_argument('--color', help='Print the output in color', choices=['never', 'always', 'auto'], default='auto')
+parser.add_argument('--libc', help='The libc file')
 
 def main(args):
     lookup = TemplateLookup(
@@ -54,7 +55,8 @@ def main(args):
                              args.user,
                              args.password,
                              args.path,
-                             args.quiet)
+                             args.quiet,
+                             args.libc)
 
     # Fix Mako formatting bs
     output = re.sub('\n\n\n', '\n\n', output)

@@ -26,6 +26,7 @@ parser = argparse.ArgumentParser(description='Pwntools Command-line Interface',
 parser_commands = parser.add_subparsers(dest='command')
 
 def main(file=sys.argv[0]):
+    print(13131313)
     import pwnlib.commandline.main
     name = os.path.splitext(os.path.basename(file))[0]
     sys.argv.insert(1, name)
